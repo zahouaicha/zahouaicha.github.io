@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sing Up and Login Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="wraper">
+		<div class="header"><h2>Sing Up & Login</h2></div>
+		<div class="container">
+
+			<div class="login">
+
+				<h3>Login</h3>
+				<form id="formlogin">
+					<label>Email</label>
+					<input id='email' type="text" name="">
+
+					<label>PAssword</label>
+
+					<input id='password' type="text" name="">
+					<button type="button" id="login" class="info">Login</button>
+
+				</form>
+
+
+			</div>
+			<div class="singup">
+				<h3>Sing Up</h3>
+				<form id="formsingup">
+					<div class="box_left">
+						<label>Email</label>
+						<input id='email_up' type="text" name="">
+
+						<label>Name</label>
+
+						<input id='name_up' type="text" name="">
+					</div>
+					<div class="box_right">
+						<label>Subname</label>
+						<input id='subname_up' type="text" name="">
+
+						<label>Password</label>
+
+						<input id='password_up' type="text" name="">
+					</div>
+					<div class="box_full"></div>
+					<button type="button" id="singup" class="success">SingUp</button>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<script type="text/javascript" src="jQuery-3.1.1.js"></script>
+	<script type="text/javascript">
+
+			$(document).ready(function () {
+			
+			var Login={
+
+				init:function(){
+					var login = $('#login'), singup  = $('#singup');
+					var formlogin = $('#formlogin'), formsingup=$('#formsingup');
+					login.on('click',function(e){
+					var email = $('#email'), password = $('#password');
+						if(email.val() ==''){
+							ok = 1;
+							email.css('border','1px solid red');
+						}else{
+							email.css('border','1px solid green');
+							ok = 0;
+						}
+						 if(password.val() == ''){
+						 	okp=1;
+							password.css('border','1px solid red');
+						}else{
+					    	password.css('border','1px solid green');
+					    	okp = 0;
+						}
+						if(ok < 1 && okp < 1){
+							console.log(ok);
+							console.log(ok);
+							// ok here insert the ajax request for login
+
+						}
+
+
+						e.preventDefault();
+					})
+
+					
+					singup.on('click',function(e){
+					var email = $('#email_up'), password = $('#password_up');
+					var name = $('#name_up'), subname = $('#subname_up');
+
+						if(email.val() ==''){
+							ok = 1;
+							email.css('border','1px solid red');
+						}else{
+							email.css('border','1px solid green');
+							ok = 0;
+						}
+						if(subname.val() ==''){
+							oks = 1;
+							subname.css('border','1px solid red');
+						}else{
+							subname.css('border','1px solid green');
+							oks = 0;
+						}
+						if(name.val() ==''){
+							okn = 1;
+							name.css('border','1px solid red');
+						}else{
+							name.css('border','1px solid green');
+							okn = 0;
+						}
+						 if(password.val() == ''){
+						 	okp=1;
+							password.css('border','1px solid red');
+						}else{
+					    	password.css('border','1px solid green');
+					    	okp = 0;
+						}
+						if(ok < 1 && okp < 1 && okn < 1 && oks < 1){
+							console.log(ok);
+							console.log(ok);
+							// ok here insert the ajax request for login
+
+						}
+
+
+						e.preventDefault();
+					})
+
+					}
+			}
+			Login.init();
+
+			})
+
+	</script>
+
+</body>
+</html>
